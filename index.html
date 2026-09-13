@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POKJAWAS-AGAM | Pengawas Madrasah Kabupaten Agam</title>
+  <meta name="description" content="POKJAWAS-AGAM adalah pusat layanan, pendampingan, informasi, dan transformasi digital Pengawas Madrasah Kabupaten Agam.">
+  <meta name="keywords" content="Pokjawas Sragen, Pengawas Madrasah Sragen, Madrasah, Kemenag Sragen, RPP KBC, Kurikulum Berbasis Cinta">
+  <meta name="author" content="POKJAWAS Madrasah Kabupaten Agam">
+  <meta name="theme-color" content="#006633">
+
+  <meta property="og:title" content="POKJAWAS-Agam">
+  <meta property="og:description" content="Pusat layanan, pendampingan, informasi dan transformasi digital Pengawas Madrasah Kabupaten Agam.">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "POKJAWAS-Agam",
+    "description": "Kelompok Kerja Pengawas Madrasah Kabupaten Agam",
+    "email": "Pokjawas-Agam@kemenag.go.id",
+    "telephone": "+6281374342800",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl Veteran Padang Baru",
+      "addressLocality": "Agam",
+      "addressRegion": "Sumatera Barat",
+      "addressCountry": "ID"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --green: #006633;
+      --green-dark: #004d27;
+      --green-light: #e7f4ec;
+      --green-soft: #f1f8f3;
+      --gold: #D4AF37;
+      --gold-dark: #b89324;
+      --gold-light: #f7e8b0;
+      --white: #ffffff;
+      --bg: #F8F9FA;
+      --dark: #18231d;
+      --text: #475569;
+      --border: #e5e7eb;
+      --shadow: 0 10px 35px rgba(0, 70, 35, 0.10);
+      --shadow-hover: 0 15px 40px rgba(0, 70, 35, 0.18);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button, input, textarea, select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* CONTAINER */
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    /* TOPBAR */
+    .topbar {
+      background: var(--green-dark);
+      color: #fff;
+      font-size: .85rem;
+      padding: 8px 0;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .topbar a {
+      color: var(--gold-light);
+      transition: opacity 0.2s;
+    }
+
+    .topbar a:hover {
+      opacity: 0.85;
+    }
+
+    /* NAVBAR */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+
+    .navbar {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--green);
+      min-width: max-content;
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--green), #07884c);
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+      font-size: 1.45rem;
+      box-shadow: var(--shadow);
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1.05rem;
+      letter-spacing: .4px;
+      color: var(--green-dark);
+    }
+
+    .brand-text small {
+      color: var(--text);
+      font-size: .72rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-link {
+      border: none;
+      background: transparent;
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: var(--dark);
+      font-weight: 600;
+      font-size: .9rem;
+      transition: .25s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: var(--green);
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      font-size: 1.25rem;
+    }
+
+    /* SPA PAGE TOGGLE */
+    .spa-page {
+      display: none;
+      animation: fadeSlide .4s ease;
+    }
+
+    .spa-page.active {
+      display: block;
+    }
+
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* HERO */
+    .hero {
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,.25), transparent 40%),
+        linear-gradient(135deg, var(--green-dark), var(--green));
+      color: #fff;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border: 60px solid rgba(255,255,255,.05);
+      border-radius: 50%;
+      right: -150px;
+      bottom: -200px;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 40px;
+      align-items: center;
+      padding: 70px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212,175,55,.16);
+      border: 1px solid rgba(212,175,55,.4);
+      color: var(--gold-light);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: .85rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      max-width: 850px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,.9);
+      max-width: 700px;
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      padding: 13px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: .25s ease;
+      font-size: .95rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #1d1909;
+    }
+
+    .btn-primary:hover {
+      background: #e5bf3b;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.3);
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,.22);
+    }
+
+    .hero-panel {
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 25px;
+      padding: 28px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .hero-panel h3 {
+      color: var(--gold-light);
+      margin-bottom: 18px;
+      font-size: 1.2rem;
+    }
+
+    .hero-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-list div {
+      background: rgba(255,255,255,.08);
+      padding: 14px 16px;
+      border-radius: 12px;
+      font-size: .92rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* RUNNING TEXT TICKER */
+    .ticker {
+      background: var(--gold);
+      overflow: hidden;
+      white-space: nowrap;
+      color: #292207;
+      font-weight: 700;
+      padding: 12px 0;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.08);
+    }
+
+    .ticker-track {
+      display: inline-block;
+      padding-left: 100%;
+      animation: tickerMove 30s linear infinite;
+    }
+
+    .ticker:hover .ticker-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes tickerMove {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 75px 0;
+    }
+
+    .section-soft {
+      background: var(--green-soft);
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 40px;
+    }
+
+    .section-title .eyebrow {
+      background: var(--green-light);
+      border-color: #cbe7d5;
+      color: var(--green);
+    }
+
+    .section-title h2 {
+      color: var(--green-dark);
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: var(--text);
+    }
+
+    /* STATS BAR */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      background: #fff;
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-top: -35px;
+      position: relative;
+      z-index: 10;
+      border: 1px solid var(--border);
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: .88rem;
+      color: var(--text);
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+    /* GRID & CARDS */
+    .grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 25px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.03);
+      transition: .3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .icon-box {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 1.55rem;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      color: var(--green-dark);
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+
+    .card p {
+      color: var(--text);
+      font-size: .94rem;
+    }
+
+    /* ANNOUNCEMENT CARD */
+    .announcement {
+      border-left: 5px solid var(--gold);
+    }
+
+    .announcement-date {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green);
+      padding: 5px 10px;
+      border-radius: 7px;
+      font-size: .78rem;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    /* FEATURE BANNER */
+    .app-feature {
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      border-radius: 25px;
+      padding: 40px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .app-feature::after {
+      content: "📚";
+      position: absolute;
+      right: 25px;
+      bottom: -25px;
+      font-size: 10rem;
+      opacity: .1;
+      pointer-events: none;
+    }
+
+    .app-feature h2 {
+      color: var(--gold-light);
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    .app-feature p {
+      max-width: 720px;
+      color: rgba(255,255,255,.9);
+    }
+
+    .app-feature .btn-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    /* TIMELINE & LISTS */
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      background: #fff;
+      padding: 22px 22px 22px 28px;
+      border-left: 4px solid var(--green);
+      border-radius: 0 14px 14px 0;
+      box-shadow: 0 5px 18px rgba(0,0,0,.04);
+      transition: transform 0.2s;
+    }
+
+    .timeline-item:hover {
+      transform: translateX(4px);
+    }
+
+    .timeline-item span {
+      color: var(--gold-dark);
+      font-weight: bold;
+      font-size: .85rem;
+      letter-spacing: .5px;
+    }
+
+    .timeline-item h3 {
+      color: var(--green-dark);
+      margin: 4px 0 8px;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-list li {
+      padding: 14px;
+      background: var(--green-soft);
+      border-radius: 12px;
+      color: var(--dark);
+      word-break: break-word;
+      font-size: .92rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* DIGITAL SERVICE CARD */
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .service-card p {
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .btn-green:hover {
+      background: var(--green-dark);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--green);
+      color: var(--green);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--green-light);
+    }
+
+    /* SEARCH FILTER BAR */
+    .search-box {
+      max-width: 500px;
+      margin: 0 auto 30px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 14px 20px 14px 45px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      outline: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      transition: border-color 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--green);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text);
+    }
+
+    /* INFORMATION & GALLERY */
+    .news-image {
+      height: 180px;
+      border-radius: 14px;
+      margin-bottom: 17px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+
+    .calendar-table th,
+    .calendar-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .calendar-table th {
+      background: var(--green);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .repo-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .repo-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      align-items: center;
+      padding: 18px 20px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: border-color 0.2s;
+    }
+
+    .repo-item:hover {
+      border-color: var(--green);
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-item {
+      height: 220px;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      background: var(--green);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 35px 15px 15px;
+      background: linear-gradient(transparent, rgba(0,0,0,.85));
+      color: #fff;
+      font-size: .88rem;
+      font-weight: 500;
+    }
+
+    /* FORM & FAQ */
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+      font-size: .9rem;
+      color: var(--green-dark);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid #d9dee2;
+      border-radius: 10px;
+      outline: none;
+      background: #fff;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-control:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(0,102,51,.12);
+    }
+
+    textarea.form-control {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 18px 20px;
+      background: transparent;
+      border: none;
+      font-weight: 700;
+      color: var(--green-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      padding: 0 20px 18px;
+      color: var(--text);
+      font-size: .94rem;
+      display: none;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* MODAL */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.75);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 3000;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .modal-content {
+      width: min(900px, 100%);
+      position: relative;
+      animation: zoomIn .3s ease;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(.92);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .modal-content img {
+      width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      background: #111;
+      display: block;
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      background: var(--gold);
+      color: #000;
+      font-size: 1.2rem;
+      font-weight: bold;
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .modal-body-padding {
+      padding: 25px;
+    }
+
+    /* FLOATING BUTTONS */
+    .floating-wa {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25D366;
+      color: #fff;
+      font-size: 1.8rem;
+      box-shadow: 0 10px 25px rgba(37,211,102,.35);
+      z-index: 2000;
+      transition: .25s ease;
+    }
+
+    .floating-wa:hover {
+      transform: scale(1.1);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,.8);
+      padding: 60px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: 35px;
+    }
+
+    footer h3, footer h4 {
+      color: var(--gold-light);
+      margin-bottom: 18px;
+    }
+
+    footer p, footer li {
+      font-size: .9rem;
+    }
+
+    footer ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    footer a {
+      color: rgba(255,255,255,.8);
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: var(--gold-light);
+    }
+
+    .copyright {
+      margin-top: 40px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255,255,255,.15);
+      text-align: center;
+      font-size: .85rem;
+    }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      top: 90px;
+      right: 20px;
+      background: var(--green);
+      color: #fff;
+      padding: 15px 22px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transform: translateX(140%);
+      transition: .35s ease;
+      z-index: 5000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+
+    .toast.show {
+      transform: translateX(0);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px 4%;
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-menu.open {
+        display: flex;
+        animation: fadeSlide .25s ease;
+      }
+
+      .nav-link {
+        width: 100%;
+        text-align: left;
+      }
+
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .footer-grid,
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        margin-top: 20px;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topbar {
+        text-align: center;
+      }
+
+      .topbar-inner {
+        justify-content: center;
+      }
+
+      .brand-text small {
+        display: none;
+      }
+
+      h1 {
+        font-size: 2.1rem;
+      }
+
+      .hero-grid {
+        padding: 55px 0;
+      }
+
+      .section {
+        padding: 55px 0;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .repo-item {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .calendar-table {
+        font-size: .8rem;
+      }
+
+      .calendar-table th,
+      .calendar-table td {
+        padding: 10px 8px;
+      }
+
+      .floating-wa {
+        width: 54px;
+        height: 54px;
+        right: 15px;
+        bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>🏛️ Pengawas Madrasah Kabupaten Agam • Kantor Kementerian Agama Kabupaten Agam</span>
+      <span>
+        📞 <a href="tel:081374342800">081374342800</a>
+        &nbsp; | &nbsp;
+        ✉️ <a href="mailto:Pokjawas-Agam@kemenag.go.id">Pokjawas-Agam@kemenag.go.id</a>
+      </span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="container navbar">
+      <a href="#beranda" class="brand nav-trigger" data-page="beranda">
+        <div class="brand-logo">☪</div>
+        <div class="brand-text">
+          <strong>POKJAWAS-Agam</strong>
+          <small>Pengawas Madrasah Kabupaten Agam</small>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka Menu">
+        ☰
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <button class="nav-link active nav-trigger" data-page="beranda">Beranda</button>
+        <button class="nav-link nav-trigger" data-page="profil">Profil</button>
+        <button class="nav-link nav-trigger" data-page="layanan">Layanan Digital</button>
+        <button class="nav-link nav-trigger" data-page="informasi">Pusat Informasi</button>
+        <button class="nav-link nav-trigger" data-page="galeri">Galeri & Karya</button>
+        <button class="nav-link nav-trigger" data-page="kontak">Kontak & Konsultasi</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       PAGE BERANDA
+  ========================================================== -->
+  <main id="beranda" class="spa-page active">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">✦ Pusat Layanan Pengawas Madrasah Digital</div>
+          <h1>
+            Wujudkan Madrasah Agam Unggul dan Berprestasi Melalui Pengawasan Digital yang Kolaboratif.
+          </h1>
+          <p>
+            POKJAWAS Madrasah Kabupaten Agam hadir sebagai pusat layanan,
+            pendampingan, informasi, dan transformasi digital untuk mendukung
+            peningkatan mutu pembelajaran dan tata kelola madrasah jenjang
+            RA, MI, MTs, hingga MA.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary"
+               href="https://wa.me/6281374342800"
+               target="_blank"
+               rel="noopener">
+              💬 Konsultasi via WhatsApp
+            </a>
+            <button class="btn btn-secondary nav-trigger" data-page="layanan">
+              Jelajahi Layanan →
+            </button>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <h3>Transformasi Pengawasan Madrasah</h3>
+          <div class="hero-list">
+            <div>📘 Pendampingan Kurikulum dan Pembelajaran</div>
+            <div>💻 Layanan Administrasi Berbasis Digital</div>
+            <div>📊 Supervisi dan Penilaian Kinerja</div>
+            <div>❤️ Implementasi Kurikulum Berbasis Cinta</div>
+            <div>🤝 Kolaborasi Pengawas dan Madrasah Binaan</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS COUNTER -->
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">250+</div>
+          <div class="stat-label">Madrasah Binaan (RA-MA)</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1.500+</div>
+          <div class="stat-label">Guru Madrasah Terdampingi</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Layanan Pengawasan Digital</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Wilayah Pengawasan Utama</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TICKER -->
+    <div class="ticker" style="margin-top: 40px;">
+      <div class="ticker-track">
+        📢 Agenda POKJAWAS-Agam • Pendampingan Madrasah Binaan • Supervisi Pembelajaran KMA 624 • Implementasi Kurikulum Berbasis Cinta • Penguatan Pembelajaran Mendalam • Penyusunan Perangkat Ajar KMA 1503 • Peningkatan Mutu Tata Kelola Madrasah •
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Informasi Terkini</div>
+          <h2>Pengumuman Terbaru</h2>
+          <p>
+            Informasi penting terkait program, pendampingan, supervisi,
+            dan layanan Pengawas Madrasah Kabupaten Agam.
+          </p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card announcement">
+            <span class="announcement-date">PENDAMPINGAN</span>
+            <h3>Penguatan Implementasi Kurikulum Madrasah</h3>
+            <p>
+              Pendampingan penyusunan dan implementasi kurikulum untuk
+              meningkatkan kualitas pembelajaran di madrasah Kabupaten Agam.
+            </p>
+          </article>
+          <article class="card announcement">
+            <span class="announcement-date">SUPERVISI</span>
+            <h3>Jadwal Supervisi Akademik 2026</h3>
+            <p>
+              Madrasah binaan diharapkan menyiapkan administrasi dan
+              dokumen pendukung supervisi sesuai jadwal yang telah ditetapkan.
+            </p>
+          </article>
+          <article class="card announcement">
+            <span class="announcement-date">LAYANAN DIGITAL</span>
+            <h3>Pengembangan Aplikasi Pendidikan</h3>
+            <p>
+              POKJAWAS-Agam terus mengembangkan layanan digital untuk
+              memudahkan guru dan madrasah dalam menyusun RPP KBC & Modul Ajar.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RPP FEATURE HIGHLIGHT -->
+    <section class="section section-soft">
+      <div class="container">
+        <div class="app-feature">
+          <div class="eyebrow">Aplikasi Unggulan</div>
+          <h2>Generator RPP Kurikulum Berbasis Cinta (KMA 1503/2025)</h2>
+          <p>
+            Akses aplikasi Generator RPP KBC untuk membantu guru madrasah
+            menyusun perangkat pembelajaran yang terintegrasi dengan
+            Kurikulum Berbasis Cinta, Pembelajaran Mendalam, dan nilai
+            Panca Cinta secara cepat, terstruktur, dan akuntabel.
+          </p>
+          <div class="btn-group">
+            <button class="btn btn-primary" onclick="openRppModal()">
+              ✨ Simulasi Generator RPP KBC
+            </button>
+            <button class="btn btn-secondary nav-trigger" data-page="layanan">
+              Lihat Semua Aplikasi Digital
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Layanan Utama</div>
+          <h2>Satu Pusat untuk Berbagai Kebutuhan Madrasah</h2>
+        </div>
+        <div class="grid grid-4">
+          <div class="card">
+            <div class="icon-box">📚</div>
+            <h3>Perangkat Ajar</h3>
+            <p>Generator perangkat pembelajaran & modul ajar untuk mendukung guru madrasah.</p>
+          </div>
+          <div class="card">
+            <div class="icon-box">🔎</div>
+            <h3>Supervisi</h3>
+            <p>Pendampingan dan supervisi pembelajaran secara terstruktur & digital.</p>
+          </div>
+          <div class="card">
+            <div class="icon-box">📊</div>
+            <h3>Penilaian Kinerja</h3>
+            <p>Layanan pendukung administrasi Penilaian Kinerja Guru & Kepala Madrasah.</p>
+          </div>
+          <div class="card">
+            <div class="icon-box">📢</div>
+            <h3>Informasi</h3>
+            <p>Pusat berita, agenda, regulasi Kemenag, dan informasi pendidikan terbaru.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       PAGE PROFIL
+  ========================================================== -->
+  <section id="profil" class="spa-page">
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Tentang Kami</div>
+          <h2>Profil POKJAWAS-Agam</h2>
+          <p>
+            Pengawas Madrasah Kabupaten Agam sebagai mitra strategis
+            dalam pendampingan dan peningkatan mutu pendidikan madrasah.
+          </p>
+        </div>
+        <div class="grid grid-2">
+          <div class="card">
+            <div class="icon-box">🎯</div>
+            <h3>Profil Singkat & Visi Misi</h3>
+            <p>
+              POKJAWAS Madrasah Kabupaten Agam merupakan wadah kolaborasi
+              pengawas madrasah dalam menjalankan tugas pengawasan,
+              pembinaan, pendampingan, evaluasi, dan pengembangan mutu
+              pendidikan madrasah di lingkungan Kantor Kementerian Agama Kabupaten Agam.
+            </p>
+            <br>
+            <ul class="contact-list">
+              <li>📍 Jl Veteran Padang Baru Lubuk Basung, Kabupaten Agam, Sumatera Barat</li>
+              <li>📞 Telp/WA: 081374342800</li>
+              <li>✉️ Pokjawas-Agam@kemenag.go.id</li>
+            </ul>
+            <br>
+            <a class="btn btn-green"
+               href="https://wa.me/6285103038037"
+               target="_blank"
+               rel="noopener">
+              💬 Hubungi Pengawas
+            </a>
+          </div>
+          <div class="card">
+            <div class="icon-box">🗺️</div>
+            <h3>Wilayah Binaan & Pengawas Pembina</h3>
+            <p>
+              Pendampingan pengawas mencakup satuan pendidikan madrasah
+              pada berbagai jenjang dari RA hingga MA:
+            </p>
+            <br>
+            <ul class="contact-list">
+              <li>🏫 <strong>Yusmadi, S.Ag.</li>
+              <li>🏫 <strong>Febrial, S.Pd.I</li>
+              <li>🏫 <strong>Dedi Efendi, S.Pd., M.PFis.</li>
+              <li>🏫 <strong>Afrilen, S.Ag., M.Pd./li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Roadmap</div>
+          <h2>Peta Jalan Kerja Pengawas</h2>
+          <p>Alur pendampingan dan transformasi pengawasan madrasah berkelanjutan.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span>TAHAP 01</span>
+            <h3>Pemetaan Mutu Madrasah</h3>
+            <p>Identifikasi kebutuhan, kondisi pembelajaran, tata kelola, dan potensi madrasah binaan di Kabupaten Agam.</p>
+          </div>
+          <div class="timeline-item">
+            <span>TAHAP 02</span>
+            <h3>Perencanaan Program Pendampingan</h3>
+            <p>Penyusunan program pembinaan berdasarkan kebutuhan nyata dan asesmen kontekstual setiap madrasah.</p>
+          </div>
+          <div class="timeline-item">
+            <span>TAHAP 03</span>
+            <h3>Implementasi dan Supervisi Akademik</h3>
+            <p>Pendampingan pembelajaran Kurikulum Berbasis Cinta, supervisi akademik, dan penguatan kompetensi pendidik.</p>
+          </div>
+          <div class="timeline-item">
+            <span>TAHAP 04</span>
+            <h3>Monitoring dan Evaluasi Kinerja</h3>
+            <p>Pemantauan ketercapaian program serta evaluasi berkala untuk akuntabilitas dan peningkatan mutu madrasah.</p>
+          </div>
+          <div class="timeline-item">
+            <span>TAHAP 05</span>
+            <h3>Transformasi Digital dan Inovasi</h3>
+            <p>Pengembangan generator layanan digital untuk mempercepat, mempermudah, dan meningkatkan kualitas tata kelola.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- =========================================================
+       PAGE LAYANAN DIGITAL
+  ========================================================== -->
+  <section id="layanan" class="spa-page">
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Digital Transformation</div>
+          <h2>Layanan Digital POKJAWAS-Agam</h2>
+          <p>
+            Akses berbagai aplikasi digital untuk mendukung pembelajaran,
+            administrasi, supervisi, dan peningkatan kinerja guru madrasah.
+          </p>
+        </div>
+
+        <!-- SEARCH BAR FOR DIGITAL SERVICES -->
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="serviceSearch" class="search-input" placeholder="Cari layanan digital (contoh: RPP, Supervisi, PKG)..." oninput="filterServices()">
+        </div>
+
+        <div class="grid grid-3" id="serviceGrid">
+          <article class="card service-card" data-title="generator rpp kbc kma 1503">
+            <div class="icon-box">❤️</div>
+            <h3>Generator RPP KBC Implementasi KMA 1503 Tahun 2025</h3>
+            <p>
+              Aplikasi penyusunan RPP yang terintegrasi dengan Kurikulum
+              Berbasis Cinta dan Pembelajaran Mendalam (Deep Learning).
+            </p>
+            <button class="btn btn-green" onclick="openRppModal()">
+              Buka Generator RPP →
+            </button>
+          </article>
+
+          <article class="card service-card" data-title="generator modul ajar kokurikuler">
+            <div class="icon-box">📘</div>
+            <h3>Generator Modul Ajar Kokurikuler</h3>
+            <p>
+              Aplikasi untuk membantu menyusun modul kegiatan kokurikuler
+              madrasah secara sistematis dan aplikatif.
+            </p>
+            <button class="btn btn-green" onclick="showToast('Modul Kokurikuler Siap Digunakan!')">
+              Buka Aplikasi →
+            </button>
+          </article>
+
+          <article class="card service-card" data-title="generator modul ajar ekstrakurikuler">
+            <div class="icon-box">🎓</div>
+            <h3>Generator Modul Ajar Ekstrakurikuler</h3>
+            <p>
+              Penyusunan program dan modul kegiatan ekstrakurikuler
+              sesuai potensi dan karakteristik madrasah.
+            </p>
+            <button class="btn btn-green" onclick="showToast('Modul Ekstrakurikuler Siap Digunakan!')">
+              Buka Aplikasi →
+            </button>
+          </article>
+
+          <article class="card service-card" data-title="supervisi pembelajaran kma 624 2021">
+            <div class="icon-box">🔍</div>
+            <h3>Supervisi Pembelajaran KMA 624 Tahun 2021</h3>
+            <p>
+              Aplikasi pendukung pengelolaan instrumen dan administrasi
+              supervisi pembelajaran mata pelajaran umum & keagamaan.
+            </p>
+            <button class="btn btn-green" onclick="showToast('Instrumen Supervisi Pembelajaran Siap!')">
+              Buka Aplikasi →
+            </button>
+          </article>
+
+          <article class="card service-card" data-title="penilaian kinerja guru pkg sk pendis 1843 2021">
+            <div class="icon-box">📊</div>
+            <h3>Penilaian Kinerja Guru Mapel SK Dirjen Pendis 1843/2021</h3>
+            <p>
+              Layanan digital untuk membantu proses administrasi dan
+              dokumentasi penilaian kinerja guru madrasah.
+            </p>
+            <button class="btn btn-green" onclick="showToast('Sistem PKG Online Siap!')">
+              Buka Aplikasi →
+            </button>
+          </article>
+
+          <article class="card service-card" data-title="penilaian kinerja kepala madrasah pkkm">
+            <div class="icon-box">🏛️</div>
+            <h3>Penilaian Kinerja Kepala Madrasah (PKKM)</h3>
+            <p>
+              Instrumen dan portofolio digital pendukung penilaian kinerja berkala Kepala RA, MI, MTs, dan MA.
+            </p>
+            <button class="btn btn-green" onclick="showToast('Sistem PKKM Digital Siap!')">
+              Buka Aplikasi →
+            </button>
+          </article>
+
+          <article class="card service-card" data-title="portofolio pendampingan pengawas">
+            <div class="icon-box">📋</div>
+            <h3>Portofolio Digital Pendampingan Pengawas</h3>
+            <p>
+              Laporan elektronik dan jurnal pendampingan pengawas madrasah berbasis bukti kinerja nyata.
+            </p>
+            <button class="btn btn-green" onclick="showToast('Portofolio Pendampingan Siap!')">
+              Buka Aplikasi →
+            </button>
+          </article>
+
+          <article class="card service-card" data-title="klinik konsultasi dan aduan madrasah">
+            <div class="icon-box">💬</div>
+            <h3>Klinik Konsultasi & Pendampingan Online</h3>
+            <p>
+              Ruang diskusi langsung antara guru/madrasah binaan dengan pengawas pembina secara efisien.
+            </p>
+            <button class="btn btn-green nav-trigger" data-page="kontak">
+              Konsultasi Sekarang →
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- =========================================================
+       PAGE PUSAT INFORMASI
+  ========================================================== -->
+  <section id="informasi" class="spa-page">
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Pusat Informasi</div>
+          <h2>Berita & Dokumen Regulasi Madrasah</h2>
+          <p>
+            Dapatkan update terbaru mengenai regulasi Kementerian Agama,
+            agenda kegiatan POKJAWAS-Agam, serta publikasi karya pendidikan.
+          </p>
+        </div>
+
+        <div class="grid grid-3" style="margin-bottom: 50px;">
+          <article class="card">
+            <div class="news-image news-one" style="background-image: url('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80');"></div>
+            <span class="announcement-date">BERITA PENDIDIKAN</span>
+            <h3>Sosialisasi Kurikulum KBC & Pembelajaran Mendalam</h3>
+            <p>POKJAWAS Agam menggelar workshop penyusunan RPP KBC untuk perwakilan guru madrasah se-Kabupaten.</p>
+          </article>
+          <article class="card">
+            <div class="news-image news-two" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80');"></div>
+            <span class="announcement-date">SUPERVISI</span>
+            <h3>Penyelarasan Instrumen Supervisi Digital 2026</h3>
+            <p>Penerapan instrumen supervisi berbasis digital untuk meningkatkan objektivitas dan efisiensi evaluasi.</p>
+          </article>
+          <article class="card">
+            <div class="news-image news-three" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80');"></div>
+            <span class="announcement-date">REGULASI</span>
+            <h3>Panduan Implementasi KMA 1503 Tahun 2025</h3>
+            <p>Penjelasan lengkap arah kebijakan pembelajaran dan Kurikulum Berbasis Cinta di lingkungan Kemenag Agam.</p>
+          </article>
+        </div>
+
+        <div class="grid grid-2">
+          <!-- CALENDAR AGENDA -->
+          <div>
+            <h3 style="color: var(--green-dark); margin-bottom: 15px;">📅 Calendar Agenda Pengawasan</h3>
+            <table class="calendar-table">
+              <thead>
+                <tr>
+                  <th>Kegiatan</th>
+                  <th>Waktu</th>
+                  <th>Sasaran</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pendampingan RPP KBC</td>
+                  <td>15-18 Sept 2026</td>
+                  <td>Guru MI & MTs</td>
+                </tr>
+                <tr>
+                  <td>Supervisi Akademik Terpadu</td>
+                  <td>22-29 Sept 2026</td>
+                  <td>Madrasah Aliyah</td>
+                </tr>
+                <tr>
+                  <td>Bimtek PKG & PKKM</td>
+                  <td>05-08 Okt 2026</td>
+                  <td>Kepala Madrasah</td>
+                </tr>
+                <tr>
+                  <td>Evaluasi Pembelajaran KBC</td>
+                  <td>20 Okt 2026</td>
+                  <td>Semua Jenjang</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- DOCUMENT REPOSITORY -->
+          <div>
+            <h3 style="color: var(--green-dark); margin-bottom: 15px;">📁 Repositori Dokumen & Pedoman</h3>
+            <div class="repo-list">
+              <div class="repo-item">
+                <div>
+                  <strong>Panduan RPP Kurikulum Berbasis Cinta</strong>
+                  <div style="font-size: 0.8rem; color: var(--text);">PDF • KMA 1503 Tahun 2025</div>
+                </div>
+                <button class="btn btn-outline" onclick="showToast('Mengunduh Panduan RPP KBC...')">Unduh</button>
+              </div>
+              <div class="repo-item">
+                <div>
+                  <strong>Instrumen Supervisi Akademik KMA 624</strong>
+                  <div style="font-size: 0.8rem; color: var(--text);">DOCX • Standar Pengawasan</div>
+                </div>
+                <button class="btn btn-outline" onclick="showToast('Mengunduh Instrumen KMA 624...')">Unduh</button>
+              </div>
+              <div class="repo-item">
+                <div>
+                  <strong>Juknis Penilaian Kinerja Guru (SK 1843)</strong>
+                  <div style="font-size: 0.8rem; color: var(--text);">PDF • Dirjen Pendis</div>
+                </div>
+                <button class="btn btn-outline" onclick="showToast('Mengunduh Juknis PKG 1843...')">Unduh</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- =========================================================
+       PAGE GALERI & KARYA
+  ========================================================== -->
+  <section id="galeri" class="spa-page">
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Dokumentasi & Portofolio</div>
+          <h2>Galeri Kegiatan & Karya Madrasah</h2>
+          <p>
+            Dokumentasi pendampingan, supervisi, workshop, serta dokumentasi
+            kegiatan POKJAWAS-Agam bersama madrasah binaan.
+          </p>
+        </div>
+
+        <div class="gallery">
+          <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80', 'Workshop Penyusunan Perangkat Ajar RPP KBC')">
+            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="Workshop RPP KBC">
+            <div class="gallery-caption">Workshop RPP KBC 2026</div>
+          </div>
+          <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80', 'Supervisi Pembelajaran Lapangan di MTs Binaan')">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="Supervisi Pembelajaran">
+            <div class="gallery-caption">Supervisi Akademik Lapangan</div>
+          </div>
+          <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80', 'Pendampingan Digitalisasi Tata Kelola Madrasah')">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Pendampingan Digital">
+            <div class="gallery-caption">Pendampingan Digitalisasi</div>
+          </div>
+          <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80', 'Rapat Koordinasi Pengawas Madrasah Agam')">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="Rakor Pengawas">
+            <div class="gallery-caption">Rakor POKJAWAS Agam</div>
+          </div>
+          <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1200&q=80', 'Pembinaan Guru RA dan MI Pembelajaran Berbasis Cinta')">
+            <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80" alt="Pembinaan Guru RA MI">
+            <div class="gallery-caption">Pembinaan Guru RA & MI</div>
+          </div>
+          <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80', 'Penilaian Kinerja Kepala Madrasah (PKKM)')">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80" alt="Penilaian PKKM">
+            <div class="gallery-caption">Pelaksanaan PKKM Digital</div>
+          </div>
+          <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80', 'Bimtek Penyusunan Modul Ajar Kokurikuler')">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Bimtek Modul Ajar">
+            <div class="gallery-caption">Bimtek Modul Kokurikuler</div>
+          </div>
+          <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80', 'Penyerahan Penghargaan Madrasah Inovatif Agam')">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Apresiasi Madrasah">
+            <div class="gallery-caption">Apresiasi Madrasah Inovatif</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- =========================================================
+       PAGE KONTAK & KONSULTASI
+  ========================================================== -->
+  <section id="kontak" class="spa-page">
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Hubungi Kami</div>
+          <h2>Layanan Pendampingan & Konsultasi</h2>
+          <p>
+            Kirimkan pertanyaan, permohonan pendampingan, atau aduan layanan pengawasan madrasah.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          <!-- FORM -->
+          <div class="card">
+            <h3 style="margin-bottom: 20px;">Formulir Consultation & Feedback</h3>
+            <form id="contactForm" onsubmit="handleFormSubmit(event)">
+              <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" class="form-control" placeholder="Contoh: Dedi Efendi" required>
+              </div>
+              <div class="form-group">
+                <label for="madrasah">Nama Madrasah / Instansi</label>
+                <input type="text" id="madrasah" class="form-control" placeholder="Contoh: MTs Negeri 9 Agam" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Alamat Email / No WhatsApp</label>
+                <input type="text" id="email" class="form-control" placeholder="0813xxx / email@domain.com" required>
+              </div>
+              <div class="form-group">
+                <label for="topik">Kategori Konsultasi</label>
+                <select id="topik" class="form-control">
+                  <option value="rpp-kbc">Kurikulum & RPP KBC</option>
+                  <option value="supervisi">Supervisi Akademik</option>
+                  <option value="pkg">Penilaian Kinerja (PKG/PKKM)</option>
+                  <option value="administrasi">Layanan Digital & Administrasi</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="pesan">Pesan / Kepentingan Pendampingan</label>
+                <textarea id="pesan" class="form-control" placeholder="Tuliskan pertanyaan atau kebutuhan pendampingan Anda secara detail..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                ✈️ Kirim Pesan Konsultasi
+              </button>
+            </form>
+          </div>
+
+          <!-- FAQ & CONTACT INFO -->
+          <div>
+            <div class="card" style="margin-bottom: 25px;">
+              <h3>📍 Sekretariat POKJAWAS Madrasah Agam</h3>
+              <p style="margin-top: 10px;">
+                Kantor Kementerian Agama Kabupaten Agam<br>
+                Jl. Veteran Padang Baru Lubuk Basung, Kabupaten Agam, Sumatera Barat
+              </p>
+              <br>
+              <a class="btn btn-green" href="https://wa.me/6281374342800" target="_blank" rel="noopener">
+                💬 Chat Direct WhatsApp (081374342800)
+              </a>
+            </div>
+
+            <h3 style="color: var(--green-dark); margin-bottom: 15px;">❓ Pertanyaan Sering Diajukan (FAQ)</h3>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Bagaimana cara mengakses Generator RPP KBC?</span>
+                <span>+</span>
+              </button>
+              <div class="faq-answer">
+                Anda dapat membuka menu Layanan Digital lalu klik "Buka Generator RPP" atau gunakan tombol simulasi RPP langsung di website ini.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Siapa yang dapat mengajukan pendampingan supervisi?</span>
+                <span>+</span>
+              </button>
+              <div class="faq-answer">
+                Seluruh pengelola RA, MI, MTs, dan MA di bawah binaan Kantor Kementerian Agama Kabupaten Agam dapat mengajukan permohonan pendampingan.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Apakah layanan POKJAWAS-Agam dipungut biaya?</span>
+                <span>+</span>
+              </button>
+              <div class="faq-answer">
+                Seluruh layanan digital dan pendampingan resmi pengawas madrasah diselenggarakan tanpa dipungut biaya (gratis).
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/6281374342800"
+     class="floating-wa"
+     target="_blank"
+     rel="noopener"
+     title="Hubungi Pengawas via WhatsApp"
+     aria-label="WhatsApp Chat">
+    💬
+  </a>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>POKJAWAS-Agam</h3>
+        <p>
+          Kelompok Kerja Pengawas Madrasah Kabupaten Agam.<br>
+          Pusat pendampingan, supervisi, dan inovasi digital mutu pendidikan madrasah RA, MI, MTs, MA.
+        </p>
+      </div>
+
+      <div>
+        <h4>Navigasi Cepat</h4>
+        <ul>
+          <li><a href="#beranda" class="nav-trigger" data-page="beranda">Beranda</a></li>
+          <li><a href="#profil" class="nav-trigger" data-page="profil">Profil Pengawas</a></li>
+          <li><a href="#layanan" class="nav-trigger" data-page="layanan">Layanan Digital</a></li>
+          <li><a href="#informasi" class="nav-trigger" data-page="informasi">Pusat Informasi & Agenda</a></li>
+          <li><a href="#galeri" class="nav-trigger" data-page="galeri">Galeri Kegiatan</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Kontak Resmi</h4>
+        <ul>
+          <li>📍 Jl. Veteran Padang Baru Lubuk Basung, Kabupaten Agam</li>
+          <li>📞 085103038037</li>
+          <li>✉️ Pokjawas-Agam@kemenag.go.id</li>
+          <li>🏛️ Kemenag Kabupaten Agam</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      <p>© 2026 POKJAWAS Madrasah Kabupaten Agam. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL VIEWER (IMAGE LIGHTBOX) -->
+  <div class="modal" id="imageModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeImageModal()">✕</button>
+      <img id="modalImg" src="" alt="Detail Gambar">
+      <div class="modal-body-padding">
+        <h4 id="modalCaption" style="color: var(--green-dark);"></h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL RPP GENERATOR PREVIEW SIMULATOR -->
+  <div class="modal" id="rppModal">
+    <div class="modal-content" style="max-width: 700px; padding: 25px;">
+      <button class="modal-close" onclick="closeRppModal()">✕</button>
+      <h3 style="color: var(--green-dark); margin-bottom: 10px;">✨ Generator RPP KBC (Simulasi Quick Modul)</h3>
+      <p style="font-size: 0.9rem; color: var(--text); margin-bottom: 20px;">
+        Gunakan simulator ini untuk menguji kerangka RPP berbasis Kurikulum Berbasis Cinta (KMA 1503/2025).
+      </p>
+
+      <div class="form-group">
+        <label>Mata Pelajaran</label>
+        <input type="text" id="rppMapel" class="form-control" value="Al-Qur'an Hadis / Fiqih / IPAS">
+      </div>
+      <div class="form-group">
+        <label>Jenjang & Kelas</label>
+        <select id="rppKelas" class="form-control">
+          <option>MI - Kelas 4</option>
+          <option>MTs - Kelas 7</option>
+          <option>MA - Kelas 10</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Nilai Panca Cinta Utama</label>
+        <select id="rppCinta" class="form-control">
+          <option>Cinta Allah SWT & Rasulullah SAW</option>
+          <option>Cinta Ilmu Pengetahuan & Kebajikan</option>
+          <option>Cinta Diri & Sesama Manusia</option>
+          <option>Cinta Lingkungan & Alam Semesta</option>
+          <option>Cinta Tanah Air & Bangsa</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary" onclick="generateSimulatedRpp()" style="width: 100%;">
+        ⚙️ Generasikan Draft RPP
+      </button>
+
+      <div id="rppResultBox" style="display: none; margin-top: 20px; padding: 15px; background: var(--green-soft); border-radius: 12px; border: 1px dashed var(--green);">
+        <h4 style="color: var(--green-dark);" id="rppResultTitle">Draft RPP KBC Ready</h4>
+        <pre id="rppResultText" style="white-space: pre-wrap; font-size: 0.85rem; margin-top: 10px; color: var(--dark);"></pre>
+        <button class="btn btn-green" onclick="copyRppText()" style="margin-top: 10px;">📋 Salin Ringkasan RPP</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toastBox">
+    <span>✅</span>
+    <span id="toastMsg">Notifikasi pesan</span>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initNavigation();
+      initMobileMenu();
+    });
+
+    // SPA Navigation Handler
+    function initNavigation() {
+      const triggers = document.querySelectorAll('.nav-trigger');
+      const pages = document.querySelectorAll('.spa-page');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetPageId = trigger.getAttribute('data-page');
+          if (!targetPageId) return;
+
+          // Switch active page
+          pages.forEach(page => {
+            page.classList.remove('active');
+            if (page.id === targetPageId) {
+              page.classList.add('active');
+            }
+          });
+
+          // Update navbar active tab state
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('data-page') === targetPageId) {
+              link.classList.add('active');
+            }
+          });
+
+          // Close mobile menu if open
+          document.getElementById('navMenu').classList.remove('open');
+
+          // Scroll top smoothly
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+    }
+
+    // Mobile Navigation Toggle
+    function initMobileMenu() {
+      const toggleBtn = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+
+      toggleBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+      });
+    }
+
+    // Toast Notification System
+    function showToast(msg) {
+      const toast = document.getElementById('toastBox');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.innerText = msg;
+      toast.classList.add('show');
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+
+    // Dynamic Filter for Digital Services
+    function filterServices() {
+      const query = document.getElementById('serviceSearch').value.toLowerCase();
+      const cards = document.querySelectorAll('#serviceGrid .service-card');
+
+      cards.forEach(card => {
+        const title = card.getAttribute('data-title') || '';
+        if (title.toLowerCase().includes(query)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Image Modal Lightbox
+    function openImageModal(imgSrc, caption) {
+      const modal = document.getElementById('imageModal');
+      document.getElementById('modalImg').src = imgSrc;
+      document.getElementById('modalCaption').innerText = caption;
+      modal.classList.add('show');
+    }
+
+    function closeImageModal() {
+      document.getElementById('imageModal').classList.remove('show');
+    }
+
+    // RPP Modal Simulator Functions
+    function openRppModal() {
+      document.getElementById('rppModal').classList.add('show');
+    }
+
+    function closeRppModal() {
+      document.getElementById('rppModal').classList.remove('show');
+    }
+
+    function generateSimulatedRpp() {
+      const mapel = document.getElementById('rppMapel').value || 'Mata Pelajaran';
+      const kelas = document.getElementById('rppKelas').value;
+      const cinta = document.getElementById('rppCinta').value;
+
+      const draft = `MODUL AJAR / RPP KURIKULUM BERBASIS CINTA (KMA 1503/2025)
+Mata Pelajaran : ${mapel}
+Jenjang/Kelas  : ${kelas}
+Fokus Nilai    : ${cinta}
+Aspek Utama    : Pembelajaran Mendalam (Deep Learning) & Metode Kasih Sayang
+
+1. TUJUAN PEMBELAJARAN:
+- Peserta didik mampu memahami konsep utama ${mapel} secara mendalam dan berakhlak mulia.
+- Menanamkan sikap empati, integritas, dan ${cinta} dalam aktivitas harian.
+
+2. KEGIATAN PEMBELAJARAN:
+- Pendahuluan: Salutasi Ceria, Tadarus Al-Qur'an, Affirmasi Kasih Sayang.
+- Inti: Eksplorasi materi ${mapel}, Diskusi Kelompok Kolaboratif, Refleksi Bermakna.
+- Penutup: Doa bersama, Apresiasi Positif Guru terhadap setiap murid.
+
+Diverifikasi oleh: POKJAWAS Madrasah Kemenag Kabupaten Agam`;
+
+      document.getElementById('rppResultText').innerText = draft;
+      document.getElementById('rppResultBox').style.display = 'block';
+    }
+
+    function copyRppText() {
+      const text = document.getElementById('rppResultText').innerText;
+      const tempArea = document.createElement('textarea');
+      tempArea.value = text;
+      document.body.appendChild(tempArea);
+      tempArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempArea);
+      showToast('Draft RPP berhasil disalin ke clipboard!');
+    }
+
+    // FAQ Accordion Toggle
+    function toggleFaq(btn) {
+      const parent = btn.parentElement;
+      parent.classList.toggle('active');
+    }
+
+    // Form Submission Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const nama = document.getElementById('nama').value;
+      showToast(`Terima kasih Bp/Ibu ${nama}! Pesan konsultasi Anda telah terkirim.`);
+      document.getElementById('contactForm').reset();
+    }
+  </script>
+</body>
+</html>
